@@ -11,8 +11,6 @@
 #include<string>
 using namespace std;
 
-
-
 struct EdgeData{
     string to = 0;
     string from = 0;
@@ -21,7 +19,6 @@ struct EdgeData{
     void showEdgeData(){
         cout<<"The Edge From Node Id"<<from<<", To Node Id "<<to<<" is "<<weight<<" meters long"<<endl; 
     }
-
 };
 
 struct NodeData{
