@@ -5,6 +5,7 @@
 #include <utility>
 #include <forward_list>
 #include <climits>
+#include "readfile.cpp"
 using namespace std;
 
 /*
@@ -305,12 +306,30 @@ vector<int> GraphM::getAdjacent(int vertex) {
         if (adjList[vertex][i] != 0)
             returnVec.push_back(i);
     }
-
     return returnVec; // Return the vector of vertices
 }
 
 
 int main() {
+
+    vector<vector<string>> allEdgesAfter;
+    vector<vector<string>> allnodesAfter;
+    getEdgeDataAfterConstruction(allEdgesAfter);
+    cout<<allEdgesAfter.size()<<endl;
+    nodeDataAfterConstruction(allnodesAfter);
+    cout<<allnodesAfter.size()<<endl;
+
+    vector<vector<string>> allEdgesBefore;
+    vector<vector<string>> allnodesBefore;
+    getEdgeDataBeforeConstruction(allEdgesBefore);
+    cout<<allEdgesBefore.size()<<endl;
+    nodeDataBeforeConstruction(allnodesBefore);
+    cout<<allnodesBefore.size()<<endl<<endl;
+
+    cout<<"Total nodes Removed: "<<(allnodesBefore.size()- allnodesAfter.size())<<endl;
+    cout<<"Total edges Removed: "<<(allEdgesBefore.size()- allEdgesAfter.size())<<endl;
+
+
     // Test Cases for above methods
     /*
     GraphL testGraphL;
